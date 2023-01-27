@@ -16,7 +16,7 @@ prepare_react_native_project!
 ENV['NO_FLIPPER'] = '1'
 flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
 
-ENV['USE_FRAMEWORKS'] = 'static'
+# ENV['USE_FRAMEWORKS'] = 'static'
 
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
@@ -53,7 +53,7 @@ target 'AwesomeProject' do
   # pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi', :modular_headers => true
 
   # WatermelonDB dependency, uncomment if you're not using auto-linking
-  pod 'simdjson', path: '../node_modules/@nozbe/simdjson'
+  pod 'simdjson', path: '../node_modules/@nozbe/simdjson', modular_headers: true
 
   target 'AwesomeProjectTests' do
     inherit! :complete
